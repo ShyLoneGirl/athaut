@@ -1,0 +1,164 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"΢ɭ҅ºآ;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jkbYMs6byLBRXsot1XoGVxf5"></script>
+	<script src="audio.min.js"></script>
+	<title>athaut</title>
+</head>
+<body>
+<div>
+		<audio id="mus" controls loop autoplay style ="width:400px;height:45px">
+  <source src="mus.mp3" type="audio/mpeg">
+aaaaaaaaaaaaa
+</audio>
+	</div>
+
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
+
+
+<script>
+	// 百度地图API功能
+	
+//	var myVar=setInterval(function(){myTimer()},10000);
+
+//function myTimer()
+//{
+		var map = new BMap.Map("allmap");
+	var point = new BMap.Point(113.557792,34.836239);
+	map.centerAndZoom(point,17);
+
+	var geolocation = new BMap.Geolocation();
+	geolocation.getCurrentPosition(function(r){
+		if(this.getStatus() == BMAP_STATUS_SUCCESS){
+			
+			
+			var mk = new BMap.Marker(r.point);
+			map.addOverlay(mk);
+			map.panTo(r.point);
+	//		alert('您的位置：'+r.point.lng+','+r.point.lat)
+    var pt1 = new BMap.Point(113.548989,34.833587);//西南脚点
+    var pt2 = new BMap.Point(113.563488,34.840387);//东北脚点
+ 	    var bds = new BMap.Bounds(pt1, pt2); //测试Bounds对象
+     var  pb = 1;   
+    var result = BMapLib.GeoUtils.isPointInRect(r.point, bds);
+    if(result == true){
+        alert("你在河南工业大学内");
+
+				var myVar=setInterval(function(){myTimer()},10000);
+				function myTimer()
+				{
+						var ge = new BMap.Geolocation();
+						ge.getCurrentPosition(function(r){
+						if(this.getStatus() == BMAP_STATUS_SUCCESS){
+								var mk = new BMap.Marker(r.point);
+			        	map.clearOverlays();
+			        	map.addOverlay(mk);
+			          map.panTo(r.point);
+
+
+
+				        var c1 = new BMap.Point(113.559699,34.838856);//西南脚点
+				    		var c2 = new BMap.Point(113.561653,34.8401);//东北脚点
+				 	    	var c = new BMap.Bounds(c1,c2); //测试Bounds对象
+				        var cresult = BMapLib.GeoUtils.isPointInRect(r.point, c);
+ 				       if(cresult == true){
+ 				       	alert("欢迎来到学生公寓c区");    
+ 				       
+ 				       if(pb != 2){
+ 				       		document.getElementById("mus").src= "7s.mp3"; 
+ 				       		pb =2;
+ 				       		}
+ 				       	}
+
+
+
+				       	
+ 				       	var zl1 = new BMap.Point(113.558861,34.838405);//西南脚点
+				    		var zl2 = new BMap.Point(113.560748,34.838672);//东北脚点
+				 	    	var zl = new BMap.Bounds(zl1,zl2); //测试Bounds对象
+				        var zlresult = BMapLib.GeoUtils.isPointInRect(r.point, zl);
+ 				       if(zlresult == true){
+ 				       	alert("欢迎来到钟楼区");    
+ 				       
+ 				       if(pb != 3){
+ 				       		document.getElementById("mus").src= "17s.mp3"; 
+ 				       		pb =3;
+ 				       		}
+ 				       	}
+
+
+
+
+ 				       	var ld1 = new BMap.Point(113.55812,34.836731);//西南脚点
+				    		var ld2 = new BMap.Point(113.561552,34.837761);//东北脚点
+				 	    	var ld = new BMap.Bounds(ld1,ld2); //测试Bounds对象
+				        var ldresult = BMapLib.GeoUtils.isPointInRect(r.point, ld);
+ 				       if(ldresult == true){
+ 				       	alert("欢迎来到绿地");    
+ 				       
+ 				       if(pb != 4){
+ 				       		document.getElementById("mus").src= "20s.mp3"; 
+ 				       		pb =4;
+ 				       		}
+ 				       	}
+
+
+
+ 				       	var wh1 = new BMap.Point(113.55821,34.835754);//西南脚点
+				    		var wh2 = new BMap.Point(113.560016,34.836591);//东北脚点
+				 	    	var wh = new BMap.Bounds(ld1,ld2); //测试Bounds对象
+				        var whresult = BMapLib.GeoUtils.isPointInRect(r.point, wh);
+ 				       if(whresult == true){
+ 				       	alert("欢迎来到五号楼");    
+ 				       
+ 				       if(pb != 5){
+ 				       		document.getElementById("mus").src= "21s.mp3"; 
+ 				       		pb =5;
+ 				       		}
+ 				       	}
+ 				       	
+ 				       	
+ 				       	
+ 				       	var pq1 = new BMap.Point(113.557339,34.835705);//西南脚点
+				    		var pq2 = new BMap.Point(113.558304,34.836468);//东北脚点
+				 	    	var pq = new BMap.Bounds(pq1,pq2); //测试Bounds对象
+				        var pqresult = BMapLib.GeoUtils.isPointInRect(r.point, pq);
+ 				       if(pqresult == true){
+ 				       	alert("欢迎来到喷泉广场");    
+ 				       
+ 				       if(pb != 6){
+ 				       		document.getElementById("mus").src= "30s.mp3"; 
+ 				       		pb =6;
+ 				       		}
+ 				       	}
+ 				       	
+ 				       	
+ 				       	
+ 				       	
+ 				       	
+ 				       	
+ 				       	}
+ 				       	else {
+ 				       		alert('failed'+this.getStatus());
+ 				       		}        
+ 				       		},{enableHighAccuracy: true})
+ 				       			}
+ 				       			}
+ 				       			else {
+
+ 				       				}
+ 				       				}
+ 				       				else {
+ 				       					alert('failed'+this.getStatus());
+ 				       					}        
+ 				       					},{enableHighAccuracy: true})
+ 				       						
+ 				       						</script>

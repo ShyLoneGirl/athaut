@@ -34,7 +34,7 @@ aaaaaaaaaaaaa
 		var map = new BMap.Map("allmap");
 	var point = new BMap.Point(113.557792,34.836239);
 	map.centerAndZoom(point,17);
-
+	map.addControl(new BMap.ZoomControl()); 
 	var geolocation = new BMap.Geolocation();
 	geolocation.getCurrentPosition(function(r){
 		if(this.getStatus() == BMAP_STATUS_SUCCESS){
@@ -97,8 +97,8 @@ aaaaaaaaaaaaa
 
 
 
- 				       	var ld1 = new BMap.Point(113.55812,34.836731);//西南脚点
-				    		var ld2 = new BMap.Point(113.561552,34.837761);//东北脚点
+ 				       	var ld1 = new BMap.Point(113.558673,34.835743);//西南脚点
+				    		var ld2 = new BMap.Point(113.561651,34.8374911);//东北脚点
 				 	    	var ld = new BMap.Bounds(ld1,ld2); //测试Bounds对象
 				        var ldresult = BMapLib.GeoUtils.isPointInRect(r.point, ld);
  				       if(ldresult == true){
@@ -112,12 +112,12 @@ aaaaaaaaaaaaa
 
 
 
- 				       	var wh1 = new BMap.Point(113.55821,34.835754);//西南脚点
-				    		var wh2 = new BMap.Point(113.560016,34.836591);//东北脚点
+ 				       	var wh1 = new BMap.Point(113.558403,34.834339);//西南脚点
+				    		var wh2 = new BMap.Point(113.560141,34.835713);//东北脚点
 				 	    	var wh = new BMap.Bounds(ld1,ld2); //测试Bounds对象
 				        var whresult = BMapLib.GeoUtils.isPointInRect(r.point, wh);
  				       if(whresult == true){
- 				       	alert("欢迎来到五号楼");    
+ 				       	alert("欢迎来到4号楼");    
  				       
  				       if(pb != 5){
  				       		document.getElementById("mus").src= "21s.mp3"; 
@@ -127,12 +127,12 @@ aaaaaaaaaaaaa
  				       	
  				       	
  				       	
- 				       	var pq1 = new BMap.Point(113.557339,34.835705);//西南脚点
-				    		var pq2 = new BMap.Point(113.558304,34.836468);//东北脚点
+ 				       	var pq1 = new BMap.Point(113.560186,34.834354);//西南脚点
+				    		var pq2 = new BMap.Point(113.561691,34.835694);//东北脚点
 				 	    	var pq = new BMap.Bounds(pq1,pq2); //测试Bounds对象
 				        var pqresult = BMapLib.GeoUtils.isPointInRect(r.point, pq);
  				       if(pqresult == true){
- 				       	alert("欢迎来到喷泉广场");    
+ 				       	alert("欢迎来到3号楼");    
  				       
  				       if(pb != 6){
  				       		document.getElementById("mus").src= "30s.mp3"; 
@@ -153,10 +153,7 @@ aaaaaaaaaaaaa
  				       			}
  				       			}
  				       			else {
- 				       	 				       if(pb != 7){
- 				       		document.getElementById("mus").src= "7s.mp3"; 
- 				       		pb =7;
- 				       		}
+
  				       				}
  				       				}
  				       				else {
